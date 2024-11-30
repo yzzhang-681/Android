@@ -1,46 +1,66 @@
-## 配置详情
+# Android 期中实验
 
-### 1. `使用JDK9的版本`
+## 项目概述
 
-### 2. `gradle-wrapper.properties`
+本项目是 Android 应用的期中实验，目标是实现一个支持多级列表的功能。在该功能中，用户可以通过输入 `*` 来创建无序列表，或通过按 `Tab` 键来进行子级列表的缩进。这个功能通常应用于 Markdown 编辑器或类似的文本编辑器中，用于管理多级项目列表。
 
-请使用以下配置的 `distributionUrl`：
+## 项目功能
 
-![Alt Text](./001.png)
+- 支持通过输入 `*` 来创建无序列表项。
+- 支持通过按 `Tab` 键（或其他方式）来增加列表项的缩进，形成多级列表。
+- 支持用户输入并实时查看多级列表的效果。
 
-```properties
-distributionUrl=https\://services.gradle.org/distributions/gradle-6.7.1-bin.zip
-```
+## 目录结构
 
-### 3.  `build.gradle(notepad)`
-classpath请使用3.4.0:
-
-![Alt Text](./002.png)
-
-```properties
-classpath="com.android.tools.build:gradle:3.4.0"
-```
-### 4. `build成功之后`
-#### 4.1 `Error:Execution failed for task ':app:packageDebug'... 出现这个报错`
-build.gradle（:app）中的 android{ ... } 中 添加：
-
-![Alt Text](./003.png)
-
-```properties
-packagingOptions {
-    exclude 'META-INF/DEPENDENCIES.txt'
-    exclude 'META-INF/LICENSE.txt'
-    exclude 'META-INF/NOTICE.txt'
-    exclude 'META-INF/NOTICE'
-    exclude 'META-INF/LICENSE'
-    exclude 'META-INF/DEPENDENCIES'
-    exclude 'META-INF/notice.txt'
-    exclude 'META-INF/license.txt'
-    exclude 'META-INF/dependencies.txt'
-    exclude 'META-INF/LGPL2.1'
-}
-```
-#### 4.2 `com.android.ide.common.signing.KeytoolException: Failed to read key AndroidDebugKey from store出现这个问题`
-请删除以下两个文件并clean build之后rebuild（此文件的地址请看报错信息）:
-
-![Alt Text](./004.png)
+app/
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── com/
+│   │   │       └── example/
+│   │   │           └── android/
+│   │   │               └── notepad/
+│   │   │                   ├── LinedEditText.java       # 自定义控件：带有行间距的文本框
+│   │   │                   ├── MyCursorAdapter.java     # 自定义游标适配器，用于连接数据库和界面
+│   │   │                   ├── NoteEditor.java          # 笔记编辑逻辑
+│   │   │                   ├── NotePad.java             # 定义全局常量（列名、URI等）
+│   │   │                   ├── NotePadProvider.java     # SQLite 数据库访问与内容提供者
+│   │   │                   ├── NoteSearch.java          # 实现笔记的搜索功能
+│   │   │                   ├── NotesList.java           # 显示所有笔记的主界面
+│   │   │                   ├── NotesLiveFolder.java     # 实现动态文件夹，显示实时内容
+│   │   │                   ├── OutputText.java          # 将文本输出到另一个界面
+│   │   │                   └── TitleEditor.java         # 编辑笔记标题
+│   │   ├── res/
+│   │   │   ├── color/
+│   │   │   │   └── bg_note_item_hover.xml               # 列表项的悬浮背景颜色
+│   │   │   ├── drawable/
+│   │   │   │   ├── app_notes/
+│   │   │   │   │   ├── bg_rounded_border.xml            # 列表项圆角边框
+│   │   │   │   │   ├── card_background.xml              # 卡片背景
+│   │   │   │   │   └── classify.png                     # 分类图标
+│   │   │   │   ├── ic_menu_compose.xml                  # 编辑菜单图标
+│   │   │   │   ├── ic_menu_delete.xml                   # 删除菜单图标
+│   │   │   │   ├── ic_menu_edit.xml                     # 编辑菜单图标
+│   │   │   │   ├── ic_menu_revert.xml                   # 回滚操作图标
+│   │   │   │   ├── ic_menu_save.xml                     # 保存图标
+│   │   │   │   ├── list_view_background.xml             # 列表背景
+│   │   │   │   └── live_folder_notes/
+│   │   │   │       ├── rounded_button.xml               # 圆角按钮样式
+│   │   │   │       ├── rounded_edittext.xml             # 圆角输入框样式
+│   │   │   │       └── search_view_background.xml       # 搜索框背景样式
+│   │   │   ├── layout/
+│   │   │   │   ├── dialog_color_picker.xml              # 颜色选择对话框布局
+│   │   │   │   ├── note_editor.xml                      # 笔记编辑界面布局
+│   │   │   │   ├── note_search_list.xml                 # 笔记搜索结果列表布局
+│   │   │   │   ├── noteslist_item.xml                   # 笔记列表项布局
+│   │   │   │   ├── output_text.xml                      # 文本输出界面布局
+│   │   │   │   └── title_editor.xml                     # 标题编辑界面布局
+│   │   │   ├── menu/
+│   │   │   │   ├── editor_options_menu.xml              # 编辑选项菜单
+│   │   │   │   ├── list_context_menu.xml                # 列表上下文菜单
+│   │   │   │   └── list_options_menu.xml                # 列表操作菜单
+│   │   │   ├── values/
+│   │   │   │   ├── color.xml                            # 全局颜色资源
+│   │   │   │   └── strings.xml                          # 字符串资源
+│   └── build.gradle
+└── README.md                                            # 项目说明文档
