@@ -397,6 +397,10 @@ Classify表
  ![image](https://github.com/user-attachments/assets/69bd0f6a-1d2b-4b47-9767-e63bcf8cba30)  
 
  *文件导出  
+ ![image](https://github.com/user-attachments/assets/d8d40d19-6d38-4e2c-ac53-231625454a2a)  
+ ![image](https://github.com/user-attachments/assets/95478a29-172f-4e6f-80c7-aa439dc6c1ea)
+
+
  
  首先在NoteEditor里添加onOptionsItemSelected中的case语句 ：  
 
