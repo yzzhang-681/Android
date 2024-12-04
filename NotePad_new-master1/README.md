@@ -78,6 +78,8 @@ Classify表
    * 笔记搜索功能
 
  ![image](https://github.com/user-attachments/assets/fc19503a-54cd-4fcd-b23b-f1f81bb12fb0)  
+ ![image](https://github.com/user-attachments/assets/3d5a28e6-9ad4-445f-8b5e-beb9df0b92b0)
+
  代码部分：在list_options_menu.xml，添加一个搜索的item，搜索图标用安卓自带的图标，设为总是显示：  
  <item
     android:id="@+id/menu_search"
