@@ -388,8 +388,7 @@ Classify表
 然后在NoteEditor里添加修改颜色的方法  
 
 ![image](https://github.com/user-attachments/assets/052e1d60-db71-4159-8c09-4cd2b52fecea)  
-修改之后：  
-![image](https://github.com/user-attachments/assets/21cbfb29-f39f-4c6e-94fa-da78a5fb1ec7)
+
 
 
     
@@ -398,6 +397,9 @@ Classify表
 
  成果展示：  
  ![image](https://github.com/user-attachments/assets/69bd0f6a-1d2b-4b47-9767-e63bcf8cba30)  
+ ![image](https://github.com/user-attachments/assets/3064885a-2d12-4feb-84ba-e95328680311)
+
+    
 
  *文件导出  
  ![image](https://github.com/user-attachments/assets/d8d40d19-6d38-4e2c-ac53-231625454a2a)  
