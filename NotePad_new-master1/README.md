@@ -387,7 +387,10 @@ Classify表
 </GridLayout>  
 然后在NoteEditor里添加修改颜色的方法  
 
-![image](https://github.com/user-attachments/assets/052e1d60-db71-4159-8c09-4cd2b52fecea)
+![image](https://github.com/user-attachments/assets/052e1d60-db71-4159-8c09-4cd2b52fecea)  
+修改之后：  
+![image](https://github.com/user-attachments/assets/21cbfb29-f39f-4c6e-94fa-da78a5fb1ec7)
+
 
     
  并且添加onOptionsItemSelected中的case语句：  
